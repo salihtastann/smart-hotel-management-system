@@ -49,7 +49,10 @@ main {
 .view-header {
     margin-bottom: 3rem;
     padding-top: 1rem;
+    text-align: center;
 }
+
+.view-header h2 { font-size: 2.5rem; margin-top: 1rem; }
 
 /* Blobs */
 .blob-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; filter: blur(100px); }
@@ -62,6 +65,8 @@ main {
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem; }
 .hero-text h1 { font-size: 4.2rem; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -2px; }
 .gradient-text { background: linear-gradient(90deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; }
+.hero-btns { display: flex; gap: 1rem; margin-bottom: 3rem; }
 
 /* Mockup Dashboard */
 .main-mockup { padding: 1.5rem; }
@@ -84,10 +89,42 @@ main {
     border-radius: 50%;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
+.donut-inner strong { font-size: 1.2rem; }
+.donut-inner span { font-size: 0.6rem; color: var(--text-muted); }
 
-.m-card-mini { background: rgba(255,255,255,0.03); padding: 0.8rem 1.2rem; border-radius: 1rem; border: 1px solid var(--glass-border); margin-bottom: 0.5rem; }
-.m-card-mini span { font-size: 0.7rem; color: var(--text-muted); display: block; }
-.m-card-mini strong { font-size: 1rem; }
+/* Tech Sections */
+.tech-mini-list { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+.t-badge { background: rgba(255,255,255,0.05); padding: 0.3rem 0.8rem; border-radius: 0.5rem; font-size: 0.7rem; border: 1px solid var(--glass-border); }
+
+.log-preview {
+    background: rgba(0,0,0,0.3);
+    padding: 1rem;
+    border-radius: 0.8rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+    color: #10b981;
+    overflow: hidden;
+}
+.log-preview code { display: block; margin-bottom: 0.3rem; }
+
+.tech-grid-detailed {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.tech-card-large .t-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 1rem;
+}
+.t-header i { font-size: 1.8rem; color: var(--primary); }
+.t-item { margin-bottom: 1.5rem; }
+.t-item h4 { margin-bottom: 0.5rem; color: white; }
+.t-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
 
 /* Line Chart SVG */
 .line-chart-box { background: rgba(0,0,0,0.2); padding: 1.2rem; border-radius: 1rem; }
@@ -102,6 +139,14 @@ main {
 .counter-card h3 { font-size: 3rem; margin-bottom: 0.5rem; color: var(--primary); }
 .counter-card p { color: var(--text-muted); font-weight: 600; }
 
+/* Features View */
+.features-grid-large { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.module-card h3 { margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem; }
+
+/* Setup View */
+.code-wrapper { background: rgba(0,0,0,0.3); padding: 2rem; border-radius: 1rem; margin: 2rem 0; }
+.code-wrapper code { display: block; color: #38bdf8; margin-bottom: 0.8rem; font-family: monospace; }
+
 /* Diğer Stiller */
 .nav-content { display: flex; justify-content: space-between; align-items: center; }
 .nav-links { display: flex; list-style: none; gap: 0.5rem; }
@@ -115,7 +160,7 @@ main {
 .btn-primary { background: var(--primary); color: white; }
 .btn-outline { background: transparent; border: 1px solid var(--glass-border); color: white; }
 
-.glass-card { background: var(--card-dark); backdrop-filter: blur(15px); border: 1px solid var(--glass-border); border-radius: 2rem; }
+.glass-card { background: var(--card-dark); backdrop-filter: blur(15px); border: 1px solid var(--glass-border); border-radius: 2rem; padding: 2rem; }
 .pill { background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 700; border: 1px solid rgba(99,102,241,0.2); margin-bottom: 2rem; display: inline-block; }
 
 .view { display: none; }
@@ -125,6 +170,6 @@ main {
 footer { padding: 4rem 0; border-top: 1px solid var(--glass-border); text-align: center; color: var(--text-muted); }
 
 @media (max-width: 992px) {
-    .hero-grid, .stats-counter-grid { grid-template-columns: 1fr; }
+    .hero-grid, .stats-counter-grid, .tech-grid-detailed, .features-grid-large { grid-template-columns: 1fr; }
     .hero-text { text-align: center; }
 }
