@@ -46,12 +46,6 @@ Kırıkhan Pansiyon Yönetim Sistemi, üniversite bitirme projesi kapsamında ge
 
 ---
 
-## 🔑 Yönetici Giriş Bilgileri
-- **E-posta:** `admin@pansiyon.com`
-- **Şifre:** `741852`
-
----
-
 ## 📦 Kurulum ve Çalıştırma
 1. Projeyi bilgisayarınıza indirin.
 2. `src/ApartmentManagement.sln` dosyasını Visual Studio 2022 ile açın.
@@ -60,3 +54,4 @@ Kırıkhan Pansiyon Yönetim Sistemi, üniversite bitirme projesi kapsamında ge
 
 ---
 *Bu proje üniversite bitirme projesi olarak hazırlanmıştır.*
+
