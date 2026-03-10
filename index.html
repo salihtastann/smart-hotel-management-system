@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kırıkhan Pansiyon Yönetim Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-hotel"></i> <span>Kırıkhan Pansiyon</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Özellikler</a></li>
+                <li><a href="#tech">Teknoloji</a></li>
+                <li><a href="#setup">Kurulum</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="https://github.com/your-repo" class="btn btn-primary btn-sm">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge">Üniversite Bitirme Projesi</span>
+                <h1>Modern Pansiyon & Ön Muhasebe Otomasyonu</h1>
+                <p>Resepsiyon işlemlerinden finansal raporlamaya kadar pansiyonunuzu dijitalleştirin. .NET 9 ve WPF ile güçlendirilmiş, hızlı ve güvenilir bir çözüm.</p>
+                <div class="hero-btns">
+                    <a href="#features" class="btn btn-primary">Özellikleri Keşfet</a>
+                    <a href="#setup" class="btn btn-outline">Kurulum Rehberi</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="ui-mockup">
+                    <div class="room-grid">
+                        <div class="room-box occupied"><span>Oda 101</span><small>Dolu</small></div>
+                        <div class="room-box empty"><span>Oda 102</span><small>Müsait</small></div>
+                        <div class="room-box dirty"><span>Oda 103</span><small>Kirli</small></div>
+                        <div class="room-box occupied"><span>Oda 104</span><small>Dolu</small></div>
+                    </div>
+                    <div class="chart-box">
+                        <div class="bar" style="height: 60%"></div>
+                        <div class="bar" style="height: 85%"></div>
+                        <div class="bar" style="height: 45%"></div>
+                        <div class="bar" style="height: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Öne Çıkan Özellikler</h2>
+                <p>İşletmenizi bir üst seviyeye taşıyacak akıllı araçlar.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Akıllı Dashboard</h3>
+                    <p>Aylık finansal takip, istatistik kartları ve doluluk oranları ile pansiyonunuzun nabzını tutun.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-bed"></i></div>
+                    <h3>Görsel Oda Haritası</h3>
+                    <p>Odaların durumunu (Dolu/Boş/Kirli) renk kodları ile anlık takip edin ve hızlı check-out yapın.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-id-card"></i></div>
+                    <h3>Akıllı Resepsiyon</h3>
+                    <p>TC Kimlik no ile otomatik misafir tanıma ve dinamik kişi bazlı kayıt formları.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Ön Muhasebe</h3>
+                    <p>Cari hesap takibi, kısmi ödeme desteği ve otomatik dijital fiş oluşturma.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-file-export"></i></div>
+                    <h3>Raporlama</h3>
+                    <p>Excel ve CSV formatında Türkçe karakter uyumlu dışa aktarma seçenekleri.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-moon"></i></div>
+                    <h3>Modern Arayüz</h3>
+                    <p>Karanlık mod desteği ve Windows standartlarının ötesinde modern UI tasarımı.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="tech-stack section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Teknoloji Yığını</h2>
+                <p>En güncel teknolojilerle yüksek performans ve güvenilir.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fab fa-microsoft"></i>
+                    <span>.NET 9 Web API</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-desktop"></i>
+                    <span>WPF (.NET 9)</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <span>PostgreSQL / SQLite</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Clean Architecture</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="setup" class="setup section">
+        <div class="container">
+            <div class="setup-wrapper" style="grid-template-columns: 1fr;">
+                <div class="setup-content">
+                    <h2>Hızlı Kurulum</h2>
+                    <ol class="steps">
+                        <li>
+                            <span class="step-num">1</span>
+                            <div>
+                                <h4>Projeyi İndirin</h4>
+                                <p>Repository'i bilgisayarınıza kopyalayın.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <div>
+                                <h4>Database Update</h4>
+                                <p><code>dotnet ef database update</code> komutunu terminalde çalıştırın.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <div>
+                                <h4>Başlatın</h4>
+                                <p>Önce API projesini, ardından WPF projesini Visual Studio ile başlatın.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-hotel"></i> <span>Kırıkhan Pansiyon</span>
+                    </div>
+                    <p>Modern pansiyon yönetim çözümü.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Menü</h4>
+                    <ul>
+                        <li><a href="#features">Özellikler</a></li>
+                        <li><a href="#tech">Teknoloji</a></li>
+                        <li><a href="#setup">Kurulum</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kırıkhan Pansiyon Yönetim Sistemi - Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
