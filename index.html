@@ -3,186 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kırıkhan Pansiyon Yönetim Sistemi</title>
+    <title>Smart Hotel Management | Kırıkhan Pansiyon</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="dark-mode">
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <i class="fas fa-hotel"></i> <span>Kırıkhan Pansiyon</span>
+    <div class="blob-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Glass Floating Nav -->
+    <nav class="glass-nav">
+        <div class="container nav-content">
+            <a href="#home" class="logo" onclick="showPage('home')">
+                <div class="logo-icon"><i class="fas fa-hotel"></i></div>
+                <span>SmartHotel</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#features">Özellikler</a></li>
-                <li><a href="#tech">Teknoloji</a></li>
-                <li><a href="#setup">Kurulum</a></li>
-                <li><a href="#contact">İletişim</a></li>
+                <li><a href="#home" class="nav-item active" onclick="showPage('home')">Genel Bakış</a></li>
+                <li><a href="#features" class="nav-item" onclick="showPage('features')">Modüller</a></li>
+                <li><a href="#tech" class="nav-item" onclick="showPage('tech')">Teknoloji</a></li>
+                <li><a href="#setup" class="nav-item" onclick="showPage('setup')">Kurulum</a></li>
             </ul>
             <div class="nav-actions">
-                <button id="theme-toggle" class="theme-btn">
-                    <i class="fas fa-sun"></i>
-                </button>
-                <a href="https://github.com/your-repo" class="btn btn-primary btn-sm">GitHub</a>
+                <button id="theme-toggle" class="icon-btn"><i class="fas fa-sun"></i></button>
+                <a href="https://github.com/salihtastann/smart-hotel-management-system" class="btn btn-primary btn-sm">GitHub</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <span class="badge">Üniversite Bitirme Projesi</span>
-                <h1>Modern Pansiyon & Ön Muhasebe Otomasyonu</h1>
-                <p>Resepsiyon işlemlerinden finansal raporlamaya kadar pansiyonunuzu dijitalleştirin. .NET 9 ve WPF ile güçlendirilmiş, hızlı ve güvenilir bir çözüm.</p>
-                <div class="hero-btns">
-                    <a href="#features" class="btn btn-primary">Özellikleri Keşfet</a>
-                    <a href="#setup" class="btn btn-outline">Kurulum Rehberi</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="ui-mockup">
-                    <div class="room-grid">
-                        <div class="room-box occupied"><span>Oda 101</span><small>Dolu</small></div>
-                        <div class="room-box empty"><span>Oda 102</span><small>Müsait</small></div>
-                        <div class="room-box dirty"><span>Oda 103</span><small>Kirli</small></div>
-                        <div class="room-box occupied"><span>Oda 104</span><small>Dolu</small></div>
-                    </div>
-                    <div class="chart-box">
-                        <div class="bar" style="height: 60%"></div>
-                        <div class="bar" style="height: 85%"></div>
-                        <div class="bar" style="height: 45%"></div>
-                        <div class="bar" style="height: 90%"></div>
+    <main id="content-area" class="container">
+        <!-- Home View -->
+        <section id="home" class="view active">
+            <div class="hero-grid">
+                <div class="hero-text fade-in">
+                    <span class="pill"><i class="fas fa-microchip"></i> .NET 9 Core Altyapısı</span>
+                    <h1>Yönetimde <span class="gradient-text">Mimari</span> Mükemmellik</h1>
+                    <p>Clean Architecture ve MVVM prensipleriyle geliştirilmiş, ölçeklenebilir ve yüksek performanslı pansiyon otomasyonu.</p>
+                    <div class="hero-btns">
+                        <button class="btn btn-primary" onclick="showPage('features')">Modülleri Keşfet</button>
+                        <button class="btn btn-outline" onclick="showPage('setup')">Teknik Detaylar</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
 
-    <section id="features" class="features section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Öne Çıkan Özellikler</h2>
-                <p>İşletmenizi bir üst seviyeye taşıyacak akıllı araçlar.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Akıllı Dashboard</h3>
-                    <p>Aylık finansal takip, istatistik kartları ve doluluk oranları ile pansiyonunuzun nabzını tutun.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-bed"></i></div>
-                    <h3>Görsel Oda Haritası</h3>
-                    <p>Odaların durumunu (Dolu/Boş/Kirli) renk kodları ile anlık takip edin ve hızlı check-out yapın.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-id-card"></i></div>
-                    <h3>Akıllı Resepsiyon</h3>
-                    <p>TC Kimlik no ile otomatik misafir tanıma ve dinamik kişi bazlı kayıt formları.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-calculator"></i></div>
-                    <h3>Ön Muhasebe</h3>
-                    <p>Cari hesap takibi, kısmi ödeme desteği ve otomatik dijital fiş oluşturma.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-file-export"></i></div>
-                    <h3>Raporlama</h3>
-                    <p>Excel ve CSV formatında Türkçe karakter uyumlu dışa aktarma seçenekleri.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-moon"></i></div>
-                    <h3>Modern Arayüz</h3>
-                    <p>Karanlık mod desteği ve Windows standartlarının ötesinde modern UI tasarımı.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tech" class="tech-stack section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Teknoloji Yığını</h2>
-                <p>En güncel teknolojilerle yüksek performans ve güvenilir.</p>
-            </div>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <i class="fab fa-microsoft"></i>
-                    <span>.NET 9 Web API</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-desktop"></i>
-                    <span>WPF (.NET 9)</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-database"></i>
-                    <span>PostgreSQL / SQLite</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Clean Architecture</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="setup" class="setup section">
-        <div class="container">
-            <div class="setup-wrapper" style="grid-template-columns: 1fr;">
-                <div class="setup-content">
-                    <h2>Hızlı Kurulum</h2>
-                    <ol class="steps">
-                        <li>
-                            <span class="step-num">1</span>
-                            <div>
-                                <h4>Projeyi İndirin</h4>
-                                <p>Repository'i bilgisayarınıza kopyalayın.</p>
+                <div class="hero-visual">
+                    <div class="glass-card main-mockup fade-in-right">
+                        <div class="mockup-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <span class="m-status"><i class="fas fa-check-double"></i> Veri Güvenliği Aktif</span>
+                        </div>
+                        <div class="mockup-dashboard">
+                            <div class="m-row-top">
+                                <div class="chart-container donut-box">
+                                    <div class="donut-chart" style="--percent: 100">
+                                        <div class="donut-inner">
+                                            <strong>%100</strong>
+                                            <span>Güvenlik</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-stats-side">
+                                    <div class="m-card-mini">
+                                        <span>Şifreleme</span>
+                                        <strong>BCrypt v4.0</strong>
+                                    </div>
+                                    <div class="m-card-mini">
+                                        <span>Mimari</span>
+                                        <strong>MVVM Pattern</strong>
+                                    </div>
+                                </div>
                             </div>
-                        </li>
-                        <li>
-                            <span class="step-num">2</span>
-                            <div>
-                                <h4>Database Update</h4>
-                                <p><code>dotnet ef database update</code> komutunu terminalde çalıştırın.</p>
+                            <div class="line-chart-box">
+                                <p>Sistem Performans Grafiği (ms)</p>
+                                <div class="svg-chart">
+                                    <svg viewBox="0 0 200 60">
+                                        <path d="M0,50 Q25,10 50,40 T100,20 T150,45 T200,15" fill="none" stroke="var(--primary)" stroke-width="2" class="path-anim" />
+                                        <path d="M0,50 Q25,10 50,40 T100,20 T150,45 T200,15 V60 H0 Z" fill="url(#grad)" opacity="0.2" />
+                                        <defs>
+                                            <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" style="stop-color:var(--primary);stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:var(--primary);stop-opacity:0" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
                             </div>
-                        </li>
-                        <li>
-                            <span class="step-num">3</span>
-                            <div>
-                                <h4>Başlatın</h4>
-                                <p>Önce API projesini, ardından WPF projesini Visual Studio ile başlatın.</p>
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <i class="fas fa-hotel"></i> <span>Kırıkhan Pansiyon</span>
+                        </div>
                     </div>
-                    <p>Modern pansiyon yönetim çözümü.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Hızlı Menü</h4>
-                    <ul>
-                        <li><a href="#features">Özellikler</a></li>
-                        <li><a href="#tech">Teknoloji</a></li>
-                        <li><a href="#setup">Kurulum</a></li>
-                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Kırıkhan Pansiyon Yönetim Sistemi - Tüm Hakları Saklıdır.</p>
+
+            <!-- Yeni "Proje Öne Çıkanları" Bölümü -->
+            <div class="stats-counter-grid">
+                <div class="counter-card glass-card">
+                    <h3 class="counter" data-target="6">0</h3>
+                    <p>Ana Modül</p>
+                </div>
+                <div class="counter-card glass-card">
+                    <h3 class="counter" data-target="100">0</h3>
+                    <p>% Tip Güvenliği</p>
+                </div>
+                <div class="counter-card glass-card">
+                    <h3 class="counter" data-target="13">0</h3>
+                    <p>C# Versiyonu</p>
+                </div>
             </div>
+        </section>
+
+        <!-- Features View -->
+        <section id="features" class="view">
+            <div class="view-header">
+                <h2>Gelişmiş Modüller</h2>
+                <p>Proje kapsamında geliştirilen tüm temel fonksiyonlar.</p>
+            </div>
+            <div class="features-grid-large">
+                <div class="module-card glass-card">
+                    <div class="module-header"><i class="fas fa-users-cog"></i> <h3>Resepsiyon</h3></div>
+                    <p>TC Kimlik doğrulama sistemi ve dinamik misafir kayıt algoritması.</p>
+                </div>
+                <div class="module-card glass-card">
+                    <div class="module-header"><i class="fas fa-calculator"></i> <h3>Muhasebe</h3></div>
+                    <p>Entity Framework Core ile yönetilen borç/tahsilat ve bakiye sistemi.</p>
+                </div>
+                <div class="module-card glass-card">
+                    <div class="module-header"><i class="fas fa-door-open"></i> <h3>Oda Takibi</h3></div>
+                    <p>Üçlü durum (Dolu/Boş/Kirli) algoritması ile anlık oda haritası.</p>
+                </div>
+                <div class="module-card glass-card">
+                    <div class="module-header"><i class="fas fa-file-export"></i> <h3>Raporlama</h3></div>
+                    <p>Türkçe karakter uyumlu (Windows-1254) Excel ve CSV dışa aktarma modülü.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech/Setup Views stay the same but content-area padding fixed -->
+        <section id="tech" class="view">
+            <div class="tech-deep-dive">
+                <div class="tech-item-row glass-card">
+                    <div class="tech-icon-large"><i class="fab fa-microsoft"></i></div>
+                    <div class="tech-info">
+                        <h3>Backend (.NET 9)</h3>
+                        <p>Modern Web API mimarisi ve asenkron veri işleme teknikleri.</p>
+                    </div>
+                </div>
+                <div class="tech-item-row glass-card">
+                    <div class="tech-icon-large"><i class="fas fa-desktop"></i></div>
+                    <div class="tech-info">
+                        <h3>Frontend (WPF)</h3>
+                        <p>XAML tabanlı, MVVM desenine sadık modern kullanıcı arayüzü.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="setup" class="view">
+            <div class="setup-grid">
+                <div class="setup-instructions glass-card">
+                    <h2>Geliştirici Kurulumu</h2>
+                    <div class="code-wrapper">
+                        <code>git clone https://github.com/salihtastann/smart-hotel-management-system.git</code>
+                        <code>dotnet ef database update</code>
+                    </div>
+                    <p>Tüm bağımlılıklar NuGet üzerinden otomatik olarak çözümlenir.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 SmartHotel Project • Gelişmiş Pansiyon Otomasyonu</p>
         </div>
     </footer>
 
