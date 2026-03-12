@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kırıkhan Pansiyon Yönetim Sistemi | Proje Özellikleri</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div id="theme-transition-overlay"></div>
+    <div class="blob-bg">
+        <canvas id="particle-network"></canvas>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Glass Floating Nav (Sticky) -->
+    <nav class="glass-nav">
+        <div class="container nav-content">
+            <a href="#home" class="logo" onclick="showPage('home')">
+                <div class="logo-icon"><i class="fas fa-hotel"></i></div>
+                <span>Kırıkhan Pansiyon</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item active" onclick="showPage('home')">Genel Bakış</a></li>
+                <li><a href="#features" class="nav-item" onclick="showPage('features')">Ana Modüller</a></li>
+                <li><a href="#gallery" class="nav-item" onclick="showPage('gallery')">Galeri</a></li>
+                <li><a href="#tech" class="nav-item" onclick="showPage('tech')">Teknik Sihirler</a></li>
+                <li><a href="#faq" class="nav-item" onclick="showPage('faq')">S.S.S</a></li>
+                <li><a href="#setup" class="nav-item" onclick="showPage('setup')">Kurulum & Güvenlik</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" title="Karanlık/Aydınlık Mod"><i class="fas fa-sun"></i></button>
+                <a href="https://github.com/salihtastann" class="btn btn-primary btn-sm">GitHub Profilim</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="content-area" class="container">
+        <!-- Home View (Özet) -->
+        <section id="home" class="view active">
+            <div class="hero-grid">
+                <div class="hero-text fade-in">
+                    <span class="pill"><i class="fas fa-code-branch"></i> MVVM & Clean Architecture</span>
+                    <h1>Kırıkhan <span class="gradient-text">Pansiyon</span> Yönetim Otomasyonu</h1>
+                    <p>Üniversite Bitirme/Dönem Projesi olarak geliştirilmiş; modern, hızlı, taşınabilir ve güvenilir pansiyon yönetim sistemi.</p>
+                    <div class="hero-btns">
+                        <button class="btn btn-primary" onclick="showPage('features')">Özellikleri Keşfet</button>
+                        <button class="btn btn-outline" onclick="openVideoModal()"><i class="fas fa-play-circle"></i> Demoyu İzle</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="glass-card main-mockup fade-in-right">
+                        <div class="mockup-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <span class="m-status"><i class="fas fa-database"></i> SQLite Aktif</span>
+                        </div>
+                        <div class="mockup-dashboard">
+                            <div class="tech-mini-list">
+                                <div class="t-badge">.NET 9</div>
+                                <div class="t-badge">WPF (C#)</div>
+                                <div class="t-badge">REST API</div>
+                                <div class="t-badge">SQLite</div>
+                            </div>
+                            <!-- Animasyonlu Grafik -->
+                            <div class="m-row-top">
+                                <div class="donut-chart" id="dashboard-donut">
+                                    <div class="donut-inner">
+                                        <strong class="counter" data-target="85">0%</strong>
+                                        <span>Doluluk</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="revenue-chart">
+                                <p>Canlı İşlem Logları (islemler.log)</p>
+                                <div class="log-preview">
+                                    <code class="log-line">[2026-03-12 10:45] Login: admin - İşlem Başarılı</code>
+                                    <code class="log-line">[2026-03-12 10:48] Check-in: Oda 102 - M. Yılmaz</code>
+                                    <code class="log-line">[2026-03-12 10:50] Payment: Kısmi Ödeme (₺1,250) Alındı</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features View (Ana Modüller) -->
+        <section id="features" class="view">
+            <div class="view-header">
+                <span class="pill">Temel Özellikler</span>
+                <h2>Ana Modüller ve Özellikler</h2>
+                <p>Kapsamlı ve kullanıcı dostu bir yönetim deneyimi için tasarlanmış 4 ana modül.</p>
+            </div>
+            <div class="features-grid-large">
+                <div class="tech-card-large glass-card module-card">
+                    <div class="t-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>A. Ana Panel (Dashboard)</h3>
+                    </div>
+                    <div class="t-body">
+                        <div class="t-item">
+                            <h4><i class="fas fa-calendar-check text-primary"></i> Aylık Finansal Takip</h4>
+                            <p>Kasa her ayın 1'inde otomatik olarak sıfırlanır.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4><i class="fas fa-chart-pie text-primary"></i> İstatistik Kartları</h4>
+                            <p>Toplam/dolu/boş oda, personel sayısı, aylık tahsilat ve bekleyen borç takibi.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4><i class="fas fa-bed text-primary"></i> Bugün Ayrılacaklar Listesi</h4>
+                            <p>Süresi dolan misafirleri otomatik listeler, resepsiyonu uyarır.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-card-large glass-card module-card">
+                    <div class="t-header">
+                        <i class="fas fa-door-open"></i>
+                        <h3>B. Oda Yönetimi</h3>
+                    </div>
+                    <div class="t-body">
+                        <div class="t-item">
+                            <h4><i class="fas fa-th text-primary"></i> Görsel Oda Haritası</h4>
+                            <p>Kutu (Grid) yapısı. Boş odalar YEŞİL, dolu odalar KIRMIZI görünür.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4><i class="fas fa-id-card text-primary"></i> Dinamik Bilgi & İsimler</h4>
+                            <p>Dolu odaların üzerinde kalan misafir isimleri ve tarihleri anlık gösterilir.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4><i class="fas fa-sign-out-alt text-primary"></i> Hızlı Check-out</h4>
+                            <p>Borcu biten odalar tek tıkla boşaltılabilir ve temizliğe alınabilir.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-card-large glass-card module-card">
+                    <div class="t-header">
+                        <i class="fas fa-desktop"></i>
+                        <h3>C. Resepsiyon (Misafir Girişi)</h3>
+                    </div>
+                    <div class="t-body">
+                        <div class="t-item">
+                            <h4><i class="fas fa-user-plus text-primary"></i> Dinamik Form Yapısı</h4>
+                            <p>Kişi sayısı seçildiğinde (1-5) o kadar kişinin kayıt alanı otomatik açılır.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4><i class="fas fa-address-book text-primary"></i> Detaylı Misafir Kaydı</h4>
+                            <p>Her kişi için ayrı Ad-Soyad, TC Kimlik No ve Telefon alınır.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4><i class="fas fa-calculator text-primary"></i> Otomatik Fiyatlandırma</h4>
+                            <p>Oda fiyatı ve süreye göre toplam borç anlık olarak hesaplanır.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-card-large glass-card module-card">
+                    <div class="t-header">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <h3>D. Raporlar ve Ön Muhasebe</h3>
+                    </div>
+                    <div class="t-body">
+                        <div class="t-item">
+                            <h4><i class="fas fa-money-check-alt text-primary"></i> Kısmi Ödeme & Cari Takip</h4>
+                            <p>Parça parça ödeme alınabilir (borçtan düşme). Kalan borç, ödenen ve toplam listelenir.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4><i class="fas fa-filter text-primary"></i> Gelişmiş Filtre & Arama</h4>
+                            <p>İsim, TC, Oda No veya Tarih bazlı anında arama ve filtreleme hızı.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4><i class="fas fa-mouse-pointer text-primary"></i> Çift ve Sağ Tık Menüleri</h4>
+                            <p>Hatalı kayıt silme (sağ tık) ve çitf tıklamayla odada kalanların tam detayına ulaşma.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Counter View (Sayısal Sayaçlar) -->
+        <section class="view reveal-item">
+            <div class="stats-counter-grid glass-card">
+                <div class="counter-card" data-tilt>
+                    <i class="fas fa-rocket fa-2x text-primary mb-2"></i>
+                    <h3 class="stat-counter" data-target="100">0</h3>
+                    <p>% Performans ve Stabilite</p>
+                </div>
+                <div class="counter-card" data-tilt>
+                    <i class="fas fa-database fa-2x text-primary mb-2"></i>
+                    <h3 class="stat-counter" data-target="1">0</h3>
+                    <p>Adet Taşınabilir Veritabanı</p>
+                </div>
+                <div class="counter-card" data-tilt>
+                    <i class="fas fa-file-invoice-dollar fa-2x text-primary mb-2"></i>
+                    <h3 class="stat-counter" data-target="0">500</h3>
+                    <p>₺ Ekstra Maliyet (Tamamen Ücretsiz)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery View (Ekran Görüntüleri) -->
+        <section id="gallery" class="view">
+            <div class="view-header">
+                <span class="pill">Arayüz Tasarımı</span>
+                <h2>Ekran Görüntüleri</h2>
+                <p>WPF gücü ile geliştirilmiş modern, şık ve karanlık mod destekli arayüzler.</p>
+            </div>
+            
+            <div class="gallery-container glass-card">
+                <div class="gallery-slider">
+                    <!-- Image 1: Dashboard -->
+                    <div class="slide active">
+                        <div class="skeleton-loader"></div>
+                        <img src="gallery1.png" alt="Kırıkhan Pansiyon Ana Dashboard" class="gallery-img lazy-img" onload="this.previousElementSibling.style.display='none'">
+                        <div class="slide-caption">
+                            <h4>Kapsamlı Yönetim Paneli</h4>
+                            <p>Anlık doluluk, gelir durumları ve bugün çıkış yapacak misafirler paneli.</p>
+                        </div>
+                    </div>
+                    <!-- Image 2: Oda Yönetimi -->
+                    <div class="slide">
+                        <div class="skeleton-loader"></div>
+                        <img src="gallery2.png" alt="Oda Yönetim Ekranı" class="gallery-img lazy-img" onload="this.previousElementSibling.style.display='none'">
+                        <div class="slide-caption">
+                            <h4>Görsel Oda Haritası</h4>
+                            <p>Odaların müsaitlik ve doluluk durumlarını renk kodlarıyla takip edin.</p>
+                        </div>
+                    </div>
+                    <!-- Image 3: Resepsiyon / Kayıt -->
+                    <div class="slide">
+                        <div class="skeleton-loader"></div>
+                        <img src="gallery3.png" alt="Misafir Kayıt Ekranı" class="gallery-img lazy-img" onload="this.previousElementSibling.style.display='none'">
+                        <div class="slide-caption">
+                            <h4>Hızlı Misafir Kaydı</h4>
+                            <p>Dinamik form yapısıyla saniyeler içinde check-in işlemlerini tamamlayın.</p>
+                        </div>
+                    </div>
+                    <!-- Image 4: Raporlar -->
+                    <div class="slide">
+                        <div class="skeleton-loader"></div>
+                        <img src="gallery4.png" alt="Finansal Raporlar" class="gallery-img lazy-img" onload="this.previousElementSibling.style.display='none'">
+                        <div class="slide-caption">
+                            <h4>Detaylı Finansal Raporlar</h4>
+                            <p>Tüm tahsilatları, borçları ve cari hesapları tek ekrandan CSV olarak yönetin.</p>
+                        </div>
+                    </div>
+                    <!-- Image 5: Ayarlar -->
+                    <div class="slide">
+                        <div class="skeleton-loader"></div>
+                        <img src="gallery5.png" alt="Sistem Ayarları" class="gallery-img lazy-img" onload="this.previousElementSibling.style.display='none'">
+                        <div class="slide-caption">
+                            <h4>Dinamik Sistem Ayarları</h4>
+                            <p>Çıktı klasörlerini ve uygulama tercihlerini kolaylıkla yapılandırın.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-controls">
+                    <button class="icon-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+                    <div class="gallery-dots"></div>
+                    <button class="icon-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech View (Teknik Sihirler) -->
+        <section id="tech" class="view">
+            <div class="view-header">
+                <span class="pill">Mimari ve Ekstralar</span>
+                <h2>Teknik ve Görsel Sihirler</h2>
+                <p>Platformun gücünü yansıtan özel yazılımsal dokunuşlar ve modern UI bileşenleri.</p>
+            </div>
+
+            <div class="tech-grid-detailed">
+                <!-- Görsel ve UX -->
+                <div class="tech-card-large glass-card">
+                    <div class="t-header">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Görsel & Deneyim Tasarımı</h3>
+                    </div>
+                    <div class="t-body">
+                        <div class="t-item">
+                            <h4>Global Karanlık Mod</h4>
+                            <p>Tek tıkla tüm uygulama (tablolar, pencereler, alanlar) açık/karanlık temaya saniyeler içinde geçer.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4>Özel Başlık Çubuğu</h4>
+                            <p>Klasik Windows çubuğu yerine kurumsal logolu, modern ve tamamen borderless siyah başlık barı.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Çıktılar ve Raporlar -->
+                <div class="tech-card-large glass-card">
+                    <div class="t-header">
+                        <i class="fas fa-print"></i>
+                        <h3>Belge & Finansal Çıktı</h3>
+                    </div>
+                    <div class="t-body">
+                        <div class="t-item">
+                            <h4>Excel (.csv) Dışa Aktarma</h4>
+                            <p>Raporları Türkçe karakter sorunu olmadan (Windows-1254 koduyla) tek tıkla Excel'e aktarma.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4>Dijital Tahsilat Fişi</h4>
+                            <p>Her ödeme sonrası tarih damgalı, otomatik .txt formatında resmi tahsilat fişi oluşturulur.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yönetim ve Güvenlik -->
+                <div class="tech-card-large glass-card">
+                    <div class="t-header">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Sistem Yönetimi</h3>
+                    </div>
+                    <div class="t-body">
+                        <div class="t-item">
+                            <h4>Dinamik Ayar Yönetimi</h4>
+                            <p>Fişlerin ve raporların kaydedileceği klasörler uygulama içi seçilir, sistem bu yolları unutmaz.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4>Kapsamlı İşlem Logları</h4>
+                            <p>Kayıt, ödeme veya silme gibi tüm kritik işlemler <code>islemler.log</code> dosyasına tarih-saat ile kazınır.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4>Sıkı Giriş Kısıtlamaları</h4>
+                            <p>Metin girilecek yere sayı, sayı girilecek yere harf girilmesi Regex (Düzenli İfade) ile bloke edilir.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Setup & Security View -->
+        <section id="setup" class="view">
+            <div class="view-header">
+                <span class="pill">Deployment</span>
+                <h2>Kurulum ve Güvenlik</h2>
+                <p>Kolay kurulum, yüksek taşınabilirlik ve kriptografik koruma.</p>
+            </div>
+            
+            <div class="tech-grid-detailed">
+                <div class="tech-card-large glass-card">
+                    <div class="t-header">
+                        <i class="fas fa-box"></i>
+                        <h3>Bağımsız ve Kolay Kurulum</h3>
+                    </div>
+                    <div class="t-body">
+                        <div class="t-item">
+                            <h4>Tek Dosya Setup (.exe)</h4>
+                            <p>Tüm backend servisleri ve frontend UI katmanı tek bir .exe paketi ile saniyeler içinde kurulur, ek yazılım gerektirmez.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4>Otomatik Arka Plan Servisleri</h4>
+                            <p>Kullanıcı uygulamayı açtığında, SQLite ve API servisleri arka planda hissettirmeden ayağa kalkar.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4>SQLite Taşınabilirliği</h4>
+                            <p>Bulut veya kompleks ağ veritabanlarına bağımlı kalmadan, yerel dosya tabanlı (file-based) tam teşekküllü SQL gücü.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-card-large glass-card">
+                    <div class="t-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Veri & Kimlik Güvenliği</h3>
+                    </div>
+                    <div class="t-body">
+                        <div class="t-item">
+                            <h4>BCrypt Şifreleme</h4>
+                            <p>Kullanıcı ve admin parolaları veritabanında düz metin olarak değil, modern <b>BCrypt</b> algoritmasıyla hash'lenerek güvenceye alınır.</p>
+                        </div>
+                        <div class="t-item">
+                            <h4>Düzenli İfade (Regex) Koruması</h4>
+                            <p>Tüm form girişleri sıkı kısıtlama altındadır. SQL Injection ve UI çökmelerine karşı girişler formatlarına göre tam doğrulanır.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ View (SSS) -->
+        <section id="faq" class="view">
+            <div class="view-header">
+                <span class="pill">Cevaplar</span>
+                <h2>Sıkça Sorulan Sorular</h2>
+                <p>Proje hakkında aklınıza takılabilecek detaylar.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3>Veritabanı kurmam gerekiyor mu?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hayır, sistem tamamen taşınabilir SQLite veritabanı kullanır. Dosya tabanlı olduğu için SQL Server veya PostgreSQL gibi karmaşık kurulumlar gerektirmez.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3>Ödeme ve log işlemleri güvenli mi?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, sistemde yapılan tüm giriş-çıkışlar, ödemeler ve silme işlemleri yerel <code>islemler.log</code> dosyasına tarih ve saat damgası ile otomatik işlenir. Şifreler ise BCrypt algoritması ile veritabanında şifreli (hash) tutulur.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3>Karanlık modu nasıl aktif edebilirim?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Uygulama zaten varsayılan olarak Karanlık Mod desteği ile gelir. Kullanıcı arayüzündeki tek bir butona tıklayarak açık veya karanlık temaya anında geçiş yapabilirsiniz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3>Çıktıları Excel'e aktarırken Türkçe karakter sorunu oluyor mu?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hayır, dışa aktarma (CSV) modülümüz özel olarak <strong>Windows-1254</strong> kodlaması kullanacak şekilde tasarlanmıştır. Tüm raporlarınız Excel'de sorunsuz açılır.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal-overlay">
+        <div class="modal-content glass-card">
+            <button class="close-modal icon-btn" onclick="closeVideoModal()"><i class="fas fa-times"></i></button>
+            <video id="promo-video" controls width="100%">
+                <source src="Kırıkhan_Pansiyon_Sistemi.mp4" type="video/mp4">
+                Tarayıcınız video etiketini desteklemiyor.
+            </video>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" class="icon-btn scroll-top-btn" title="Yukarı Çık" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-hotel"></i></div>
+                    <span>Kırıkhan Pansiyon</span>
+                </div>
+                <p>Modern Pansiyon & Otel Yönetim Otomasyonu</p>
+            </div>
+            
+            <div class="footer-rights">
+                <p>&copy; 2026 <strong>Kırıkhan Pansiyon Yönetim Sistemi</strong>.</p>
+                <p>Tüm hakları saklıdır. Bu proje bir <span class="gradient-text">Üniversite Bitirme Projesi</span> olarak geliştirilmiştir.</p>
+            </div>
+
+            <div class="footer-meta">
+                <div class="dev-info">
+                    <span>Geliştiren: <strong>Salih Taştan</strong></span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/salihtastann" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="İletişim"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
