@@ -47,6 +47,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const hash = window.location.hash.replace('#', '') || 'home';
     showPage(hash);
 
+    // Mobil Menü Mantığı
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    const navActions = document.querySelector('.nav-actions');
+
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            if(navActions) navActions.classList.toggle('show');
+            const btnIcon = mobileBtn.querySelector('i');
+            if (navLinks.classList.contains('show')) {
+                btnIcon.className = 'fas fa-times';
+            } else {
+                btnIcon.className = 'fas fa-bars';
+            }
+        });
+    }
+
+    // Herhangi bir menü öğesine tıklanınca mobil menüyü kapat
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            if (navLinks && navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+                if(navActions) navActions.classList.remove('show');
+                if(mobileBtn) mobileBtn.querySelector('i').className = 'fas fa-bars';
+            }
+        });
+    });
+
     themeToggle.addEventListener('click', (e) => {
         const overlay = document.getElementById('theme-transition-overlay');
         const isCurrentlyDark = body.classList.contains('dark-mode');
